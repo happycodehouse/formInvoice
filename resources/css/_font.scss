@@ -1,0 +1,75 @@
+@charset "UTF-8";
+$fontPath: "/formInvoice/resources/fonts/";
+
+@font-face {
+    font-family: "SUIT";
+    font-display: swap;
+    font-style: normal;
+    font-weight: 100;
+    src: url("#{$fontPath}SUIT-ExtraLight.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "SUIT";
+    font-display: swap;
+    font-style: normal;
+    font-weight: 200;
+    src: url("#{$fontPath}SUIT-Light.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "SUIT";
+    font-display: swap;
+    font-style: normal;
+    font-weight: 300;
+    src: url("#{$fontPath}SUIT-Thin.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "SUIT";
+    font-display: swap;
+    font-style: normal;
+    font-weight: 400;
+    src: url("#{$fontPath}SUIT-Regular.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "SUIT";
+    font-display: swap;
+    font-style: normal;
+    font-weight: 500;
+    src: url("#{$fontPath}SUIT-Medium.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "SUIT";
+    font-display: swap;
+    font-style: normal;
+    font-weight: 600;
+    src: url("#{$fontPath}SUIT-SemiBold.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "SUIT";
+    font-display: swap;
+    font-style: normal;
+    font-weight: 700;
+    src: url("#{$fontPath}SUIT-Bold.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "SUIT";
+    font-display: swap;
+    font-style: normal;
+    font-weight: 800;
+    src: url("#{$fontPath}SUIT-ExtraBold.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "SUIT";
+    font-display: swap;
+    font-style: normal;
+    font-weight: 900;
+    src: url("#{$fontPath}SUIT-Heavy.woff2") format("woff2");
+}
+
