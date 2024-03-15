@@ -31,27 +31,151 @@
             </div>
         </section>
 
-        <section class="sec types" title="different types of invoices">
+        <section class="sec templates" title="different types of invoices">
             <div class="sec_inner">
-                <div class="click_to_types">
+                <div class="click_to_templates">
                     <a href="javascript:void(0);">
                         <span>Select a template</span>
                     </a>
                 </div>
-                <ul>
+                <ul class="form_wrap">
                     <li>
-                        <div class="form_wrap">
-                            <div class="form">
-
-                            </div>
+                        <div class="inner">
+                            <div class="form"></div>
+                            <h2>Mosaic</h2>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="inner">
+                            <div class="form"></div>
+                            <h2>Tango</h2>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="inner">
+                            <div class="form"></div>
+                            <h2>Serif</h2>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="inner">
+                            <div class="form"></div>
+                            <h2>Funkhaus</h2>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="inner">
+                            <div class="form"></div>
+                            <h2>Mini</h2>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="inner">
+                            <div class="form"></div>
+                            <h2>Blok</h2>
                         </div>
                     </li>
                 </ul>
             </div>
         </section>
+
+        <section class="sec payment">
+            <div class="sec_inner">
+                <div class="content_wrap">
+                    <div class="txt_area">
+                        <ul class="ic_star_list">
+                            <li>
+                                <span>Pay all your bills easily</span>
+                            </li>
+                            <li>
+                                <span>Send payment links</span>
+                            </li>
+                            <li>
+                                <span>Take control of your cash flow</span>
+                            </li>
+                        </ul>
+                        <a href="javascript:void(0)">Learn more</a>
+                    </div>
+                    <div class="canvas_area"></div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <div class="footer_inner">
+                <div class="copyright">
+                    <span>© 2024 Inc.</span>
+                </div>
+                <div class="links">
+                    <a href="javascript:void(0);">Privacy Policy</a>
+                    <a href="javascript:void(0);">Terms & Conditions</a>
+                </div>
+            </div>
+        </footer>
     </div>
 
 </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.1/p5.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
+<script>
+    const MEDIA_QUERY = window.matchMedia('(min-width: 1025px)');
+
+    const canvasArea = document.querySelector('.canvas_area');
+
+    const Engine = Matter.Engine;
+    const Render = Matter.Render;
+    const World = Matter.World;
+    const Bodies = Matter.Bodies;
+    const Body = Matter.Body;
+
+    let engine;
+    let render;
+    let words = [];
+    let ground, wallLeft, wallRight;
+    let wordsToDisplay = [
+        "h", "a", "p", "p", "y", "c", "o", "d", "e", "h", "o", "u", "s", "e",
+    ];
+
+    let canvasWidth = canvasArea.offsetWidth;
+        canvasHeight = canvasArea.offsetHeight;
+
+    console.log(canvasWidth)
+
+    function breakPoint(){
+        if (MEDIA_QUERY.matches) {
+            console.log('pc');
+        } else {
+            console.log('mo');
+        }
+    }
+
+    breakPoint(MEDIA_QUERY);
+    MEDIA_QUERY.addEventListener('change', breakPoint);
+
+    function setupCanvas(canvasArea){
+        const canvas = document.createElement('canvas');
+        canvasArea.appendChild(canvas);
+        return canvas.getContext('2d');
+    }
+
+    function setup() {
+        const context = setupCanvas(canvasArea);
+
+        // create Engine
+        engine = Engine.create();
+
+        // create renderer
+        render = Render.create({
+            canvas: canvasArea.querySelector('canvas'),
+            engine: engine,
+            options: {
+                width: canvasArea.offsetWidth,
+                height: canvasArea.offsetHeight,
+                wireframes: false,
+            }
+        });
+    }
+</script>
 
 </body>
 </html>
