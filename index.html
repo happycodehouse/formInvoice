@@ -136,10 +136,22 @@
         "h", "a", "p", "p", "y", "c", "o", "d", "e", "h", "o", "u", "s", "e",
     ];
 
-    let canvasWidth = canvasArea.offsetWidth;
-        canvasHeight = canvasArea.offsetHeight;
+    function updateCanvasSize() {
+        const canvasWidth = canvasArea.offsetWidth;
+        const canvasHeight = canvasArea.offsetHeight;
 
-    console.log(canvasWidth)
+        // options 내에서 canvas의 너비와 높이를 업데이트
+        render.options.width = canvasWidth;
+        render.options.height = canvasHeight;
+
+        // Matter.js에서 사용하는 렌더러 객체를 다시 생성하여 변경된 옵션을 적용
+        render.canvas.width = canvasWidth;
+        render.canvas.height = canvasHeight;
+
+    }
+
+    window.addEventListener('DOMContentLoaded', updateCanvasSize);
+    window.addEventListener('resize', updateCanvasSize);
 
     function breakPoint(){
         if (MEDIA_QUERY.matches) {
