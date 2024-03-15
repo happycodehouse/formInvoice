@@ -120,6 +120,7 @@ a {
   font-weight: 900;
   src: url("/formInvoice/resources/fonts/SUIT-Heavy.woff2") format("woff2");
 }
+/* media query */
 .sec.intro {
   padding: 0.2vw;
   background: black;

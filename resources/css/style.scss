@@ -1,6 +1,7 @@
 @charset "UTF-8";
 
-@import "reset";
-@import "font";
+@import "init/reset";
+@import "init/font";
+@import "init/mixin";
 
 @import "page/main";
