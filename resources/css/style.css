@@ -298,6 +298,38 @@ footer .links a {
   color: #fff;
 }
 
+.view-split {
+  display: flex;
+  height: 100vh;
+}
+.view-split > * {
+  position: relative;
+  width: 50%;
+  height: inherit;
+}
+.view-split main {
+  display: inherit;
+}
+.view-split main::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #FEC7B4;
+  opacity: 0.48;
+}
+
+.invoice {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  width: 60%;
+  height: 77.7277vh;
+}
 .invoice.shadow {
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 2px 4px 2px -2px rgba(0, 0, 0, 0.1);
 }
@@ -308,16 +340,14 @@ footer .links a {
   --gap-items: .05cm;
   --padding: 1cm;
   --padding-header: .2cm;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   display: grid;
-  font-size: 16px;
-  gap: var(--gap);
   height: 100%;
-  letter-spacing: -0.015em;
+  gap: var(--gap);
   padding: var(--padding);
+  background: #FEC7B4;
+  font-size: 0.625vw;
+  font-weight: 600;
+  letter-spacing: -0.015em;
   transition: background-color var(--transition-duration) var(--transition-ease);
 }
 .template#mosaic {
@@ -326,3 +356,42 @@ footer .links a {
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: min-content 1fr 1fr 1fr 1fr 1fr;
 }
+.template .grid-area.from {
+  grid-area: from;
+}
+.template .grid-area.to {
+  grid-area: to;
+}
+.template .grid-area.number {
+  grid-area: number;
+}
+.template .grid-area.dates {
+  grid-area: dates;
+}
+.template .grid-area.note {
+  grid-area: note;
+}
+.template .grid-area.items {
+  grid-area: items;
+}
+.template .grid-area.items .header {
+  display: grid;
+  gap: var(--gap);
+  grid-template-columns: repeat(2, 1fr);
+}
+.template .grid-area.items .header .price {
+  display: grid;
+  gap: var(--gap);
+  grid-template-columns: 80px 1fr 1fr;
+  text-align: right;
+}
+.template .grid-area.recap {
+  grid-area: recap;
+}
+.template .grid-area.recap .line {
+  display: grid;
+  gap: var(--gap);
+  grid-template-columns: 1fr min-content;
+}
+
+/*# sourceMappingURL=style.css.map */

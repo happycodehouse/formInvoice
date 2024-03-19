@@ -1,12 +1,46 @@
 @charset "UTF-8";
 
-.invoice {
-    &.shadow {
-        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 2px 4px 2px -2px rgba(0, 0, 0, 0.1);
+$primaryColor : #FEC7B4;
 
+.view-split {
+    display: flex;
+    height: 100vh;
+
+    > * {
+        position: relative;
+        width: 50%;
+        height: inherit;
+    }
+
+    main {
+        display: inherit;
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: $primaryColor;
+            opacity: 0.48;
+        }
     }
 }
 
+.invoice {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    width: 60%;
+    height: 77.7277vh;
+
+    &.shadow {
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 2px 4px 2px -2px rgba(0, 0, 0, 0.1);
+    }
+}
 
 /*  invoice type 01  */
 .template {
@@ -15,17 +49,14 @@
     --padding: 1cm;
     --padding-header: .2cm;
 
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-
     display: grid;
-    font-size: 16px;
-    gap: var(--gap);
     height: 100%;
-    letter-spacing: -.015em;
+    gap: var(--gap);
     padding: var(--padding);
+    background: $primaryColor;
+    font-size: 0.625vw;
+    font-weight: 600;
+    letter-spacing: -.015em;
     transition: background-color var(--transition-duration) var(--transition-ease);
 
     &#mosaic {
@@ -43,6 +74,51 @@
 
 
     .grid-area {
+        &.from {
+            grid-area: from;
+        }
 
+        &.to {
+            grid-area: to;
+        }
+
+        &.number {
+            grid-area: number;
+        }
+
+        &.dates {
+            grid-area: dates;
+        }
+
+        &.note {
+            grid-area: note;
+        }
+
+        &.items {
+            grid-area: items;
+
+            .header {
+                display: grid;
+                gap: var(--gap);
+                grid-template-columns: repeat(2, 1fr);
+
+                .price {
+                    display: grid;
+                    gap: var(--gap);
+                    grid-template-columns: 80px 1fr 1fr;
+                    text-align: right;
+                }
+            }
+        }
+
+        &.recap {
+            grid-area: recap;
+
+            .line {
+                display: grid;
+                gap: var(--gap);
+                grid-template-columns: 1fr min-content;
+            }
+        }
     }
 }

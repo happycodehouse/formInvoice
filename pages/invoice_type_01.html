@@ -1,24 +1,89 @@
 <link rel="stylesheet" href="../resources/css/style.css">
-<div class="preview">
-    <div class="container">
-        <figure>
-            <div class="view">
-                <div class="invoice shadow">
-                    <div class="template-preview">
-                        <div class="render">
-                            <div id="mosaic" class="template">
-                                <div class="grid-area from"></div>
-                                <div class="grid-area to"></div>
-                                <div class="grid-area number"></div>
-                                <div class="grid-area dates"></div>
-                                <div class="grid-area note"></div>
-                                <div class="grid-area items"></div>
-                                <div class="grid-area recap"></div>
+<div class="view-split">
+    <main>
+        <div class="invoice shadow">
+            <div class="template-preview">
+                <div class="render">
+                    <div id="mosaic" class="template">
+                        <div class="grid-area from">
+                            <div class="contact">
+                                <div>From</div>
+                            </div>
+                        </div>
+                        <div class="grid-area to">
+                            <div class="contact">
+                                <div>Recipient</div>
+                            </div>
+                        </div>
+                        <div class="grid-area number">
+                            <div>Invoice</div>
+                        </div>
+                        <div class="grid-area dates">
+                            <div>
+                                <span>Issued Mar 19, 2024</span>
+                                <span>Due Apr 19, 2024</span>
+                            </div>
+                        </div>
+                        <div class="grid-area note"></div>
+                        <div class="grid-area items">
+                            <div class="header grid">
+                                <div class="item">item</div>
+                                <div class="price">
+                                    <div>Qty</div>
+                                    <div>Rate</div>
+                                    <div>Price</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid-area recap">
+                            <div class="line subtotal">
+                                <div>Subtotal</div>
+                                <div>0.00</div>
+                            </div>
+                            <div class="line tax 0%">
+                                <div>Tax 0%</div>
+                                <div>0.00</div>
+                            </div>
+                            <div class="line total">
+                                <div>Total</div>
+                                <div>$0.00</div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </figure>
-    </div>
+        </div>
+    </main>
+    <aside>
+        <h2>New invoice</h2>
+        <div class="cell-group">
+            <div>
+                <div class="cell">
+                    <div class="prefix">
+                        <label>Name</label>
+                    </div>
+                    <main>
+                        <input placeholder="Eclipse Inc." required>
+                    </main>
+                    <aside></aside>
+                </div>
+                <div class="accordion">
+                    <div class="content">
+                        <div class="cell-group">
+                            <div class="cell">
+                                <div class="prefix">
+                                    <label>Name</label>
+                                </div>
+                                <main>
+                                    <input placeholder="Eclipse Inc." required>
+                                </main>
+                                <aside></aside>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div></div>
+        </div>
+    </aside>
 </div>
