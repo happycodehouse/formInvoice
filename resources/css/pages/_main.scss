@@ -2,11 +2,15 @@
 
 $bgColor: black;
 $mainColor : #E0F4FF;
-$txtColor: black;
+$txtColor: #000;
 $itemBorderRadius: 1.875vw; // 36px
 $bgPadding : 0.625vw; // 12px
 $itemPadding: 1.25vw; // 24px
-$imgPath: '/formInvoice/resources/images/';
+$imgPath: '../images/';
+
+main {
+    display: none;
+}
 
 .sec {
     &.intro {
@@ -130,7 +134,31 @@ $imgPath: '/formInvoice/resources/images/';
     }
 
     &.payment {
+        .content_wrap {
+            display: flex;
+
+            >* {
+                width: 50%;
+            }
+        }
+
         .txt_area {
+            padding: $itemPadding; // 16px
+            background: $bgColor;
+
+            .inner {
+                padding: $itemPadding; // 16px
+                background: $mainColor;
+                border-radius: $itemBorderRadius;
+            }
+
+            h3 {
+                margin-bottom: 1.25vw; // 24px
+                font-size: 2.5vw; // 48px
+                font-weight: 900;
+                line-height: 1.2;
+            }
+
             ul.ic_star_list {
                 li {
                     span {
@@ -138,6 +166,10 @@ $imgPath: '/formInvoice/resources/images/';
                         position: relative;
                         width: fit-content;
                         padding-left: 1.875vw; // 36px
+                        margin-bottom: 1.25vw;
+                        font-size: 1.25vw;
+                        font-weight: 700;
+                        color: $txtColor;
 
                         &::before {
                             content: '';
@@ -152,6 +184,26 @@ $imgPath: '/formInvoice/resources/images/';
                     }
                 }
             }
+
+            .btn_wrap {
+                display: flex;
+                justify-content: flex-end;
+
+                a {
+                    display: block;
+                    width: fit-content;
+                    padding: $itemPadding;
+                    background: $bgColor;
+                    border-radius: $itemBorderRadius;
+                    font-size: 1.25vw;
+                    font-weight: 800;
+                    color: $mainColor;
+                }
+            }
+        }
+
+        .canvas_area {
+            border: 3px solid lightblue;
         }
     }
 }

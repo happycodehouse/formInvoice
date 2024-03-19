@@ -121,6 +121,10 @@ a {
   src: url("/formInvoice/resources/fonts/SUIT-Heavy.woff2") format("woff2");
 }
 /* media query */
+main {
+  display: none;
+}
+
 .sec.intro {
   padding: 0.625vw;
   background: black;
@@ -145,7 +149,7 @@ a {
 .sec.intro .description p {
   font-size: 1.6vw;
   line-height: 1.2;
-  color: black;
+  color: #000;
 }
 .sec.intro .title {
   display: flex;
@@ -162,7 +166,7 @@ a {
 .sec.intro .title strong {
   font-size: 5vw;
   font-weight: 900;
-  color: black;
+  color: #000;
 }
 .sec.templates .click_to_templates {
   height: 18vh;
@@ -193,7 +197,7 @@ a {
   transform: translateY(-50%);
   width: 2.083vw;
   height: 2.083vw;
-  background: center/cover no-repeat url("/formInvoice/resources/images/star_d9d9d9.svg");
+  background: center/cover no-repeat url("../images/star_d9d9d9.svg");
 }
 .sec.templates ul.form_wrap {
   display: flex;
@@ -220,11 +224,36 @@ a {
   width: 100%;
   height: 100%;
 }
+.sec.payment .content_wrap {
+  display: flex;
+}
+.sec.payment .content_wrap > * {
+  width: 50%;
+}
+.sec.payment .txt_area {
+  padding: 1.25vw;
+  background: black;
+}
+.sec.payment .txt_area .inner {
+  padding: 1.25vw;
+  background: #E0F4FF;
+  border-radius: 1.875vw;
+}
+.sec.payment .txt_area h3 {
+  margin-bottom: 1.25vw;
+  font-size: 2.5vw;
+  font-weight: 900;
+  line-height: 1.2;
+}
 .sec.payment .txt_area ul.ic_star_list li span {
   display: block;
   position: relative;
   width: fit-content;
   padding-left: 1.875vw;
+  margin-bottom: 1.25vw;
+  font-size: 1.25vw;
+  font-weight: 700;
+  color: #000;
 }
 .sec.payment .txt_area ul.ic_star_list li span::before {
   content: "";
@@ -234,7 +263,24 @@ a {
   transform: translateY(-50%);
   width: 1.4583vw;
   height: 1.4583vw;
-  background: center/cover no-repeat url("/formInvoice/resources/images/star_d9d9d9.svg");
+  background: center/cover no-repeat url("../images/star_d9d9d9.svg");
+}
+.sec.payment .txt_area .btn_wrap {
+  display: flex;
+  justify-content: flex-end;
+}
+.sec.payment .txt_area .btn_wrap a {
+  display: block;
+  width: fit-content;
+  padding: 1.25vw;
+  background: black;
+  border-radius: 1.875vw;
+  font-size: 1.25vw;
+  font-weight: 800;
+  color: #E0F4FF;
+}
+.sec.payment .canvas_area {
+  border: 3px solid lightblue;
 }
 
 footer {
@@ -250,4 +296,33 @@ footer .copyright {
 }
 footer .links a {
   color: #fff;
+}
+
+.invoice.shadow {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 2px 4px 2px -2px rgba(0, 0, 0, 0.1);
+}
+
+/*  invoice type 01  */
+.template {
+  --gap: .5cm;
+  --gap-items: .05cm;
+  --padding: 1cm;
+  --padding-header: .2cm;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: grid;
+  font-size: 16px;
+  gap: var(--gap);
+  height: 100%;
+  letter-spacing: -0.015em;
+  padding: var(--padding);
+  transition: background-color var(--transition-duration) var(--transition-ease);
+}
+.template#mosaic {
+  grid-auto-flow: row;
+  grid-template-areas: "logo . . ." "from from to to" "number number number number" "dates note note note" "items items items items" "recap recap recap recap";
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: min-content 1fr 1fr 1fr 1fr 1fr;
 }
